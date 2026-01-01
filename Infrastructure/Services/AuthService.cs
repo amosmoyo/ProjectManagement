@@ -34,7 +34,6 @@ namespace Infrastructure.Services
         {
 
             //check if luser exist
-
             var userExist = await _userManager.FindByEmailAsync(registerDto.Email);
 
             if (userExist != null)

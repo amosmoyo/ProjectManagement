@@ -23,7 +23,6 @@ namespace Domain.Entities
         public DateTime UpdatedAt { get; set; }
 
         //Navihgation Properties
-
         public ApplicationUser User { get; set; } = null!;
 
         public ICollection<ProjectManagerDeveloper> ProjectManagerDevelopers { get; set; } = new List<ProjectManagerDeveloper>();

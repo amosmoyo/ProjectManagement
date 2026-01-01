@@ -7,11 +7,11 @@ namespace Application.Interfaces
 {
     public interface IProjectManagerServices
     {
-        Task<IEnumerable<ProjectManagerDTO>> GetAllAsync();
-        Task<ProjectManagerDTO?> GetByIdAsync(int id);
-        Task<ProjectManagerDTO?> GetByUserIdAsync(string userId);
+        Task<IEnumerable<ProjectManagerDTO?>> GetAllAsync();
+        Task<ProjectManagerDTO?> GetByIdAsync(string id);
+        //Task<ProjectManagerDTO?> GetByUserIdAsync(string userId);
         Task<bool> AssignDeveloperAsync(AssignDeveloperDTO assignDto);
-        Task<bool> RemoveDeveloperAsync(int projectManagerId, int developerId);
-        Task<IEnumerable<DeveloperDTO>> GetDevelopersAsync(int projectManagerId);
+        Task<bool> RemoveDeveloperAsync(AssignDeveloperDTO assignDto);
+        Task<IEnumerable<DeveloperDTO?>> GetDevelopersAsync(string projectManagerId);
     }
 }

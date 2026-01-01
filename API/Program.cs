@@ -87,6 +87,7 @@ builder.Services.AddAuthorization();
 
 //Register Application Services
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProjectManagerServices, ProjectManagerServices>();
 
 
 builder.Services.AddCors(options =>
@@ -147,7 +148,6 @@ var app = builder.Build();
 
 
 //Seeding
-
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -191,8 +191,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
-app.UseAuthorization();
+
 app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.MapControllers();
 

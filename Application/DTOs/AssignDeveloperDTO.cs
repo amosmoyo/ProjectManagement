@@ -6,8 +6,8 @@ namespace Application.DTOs
 {
     public class AssignDeveloperDTO
     {
-        public int ProjectManagerId { get; set; }
+        public string ProjectManagerId { get; set; } = string.Empty;
 
-        public int DeveloperId { get; set; }
+        public string DeveloperId { get; set; } = string.Empty;
     }
 }
