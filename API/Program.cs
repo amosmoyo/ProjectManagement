@@ -88,6 +88,7 @@ builder.Services.AddAuthorization();
 //Register Application Services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IProjectManagerServices, ProjectManagerServices>();
+builder.Services.AddScoped<IDeveloperServices, DeveloperServices>();
 
 
 builder.Services.AddCors(options =>
